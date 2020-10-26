@@ -4,4 +4,7 @@ install:
 brain-games:
 	@node bin/brain-games.js
 
-.PHONY: install
+publish:
+	npm publish --dry-run
+
+.PHONY: install brain-games publish
