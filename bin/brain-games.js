@@ -1,10 +1,4 @@
 #!/usr/bin/env node
-import promptly from 'promptly';
+import cli from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-
-(async () => {
-  const name = await promptly.prompt('May I have your name?');
-
-  console.log(`Hello, ${name}!`);
-})();
+cli();
