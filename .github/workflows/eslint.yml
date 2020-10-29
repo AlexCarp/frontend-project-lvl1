@@ -3,10 +3,14 @@ name: eslint
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: make lint
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: make install
+      - name: Run ESLint
+        run: make lint
