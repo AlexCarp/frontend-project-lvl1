@@ -13,5 +13,3 @@ jobs:
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
-      - name: ESLint
-        run: make lint
