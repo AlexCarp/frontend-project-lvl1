@@ -35,9 +35,11 @@ export default async () => {
       winsCounter += 1;
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      winsCounter = 0;
+      break;
     }
   }
 
-  console.log(`Congratulations, ${userName}!`);
+  if (winsCounter === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
