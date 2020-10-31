@@ -7,3 +7,6 @@
 
 ### Installation and usage of brain-calc game
 [![asciicast](https://asciinema.org/a/xtY6tZuWAQ7A9yLAyPq6SMRes.svg)](https://asciinema.org/a/xtY6tZuWAQ7A9yLAyPq6SMRes)
+
+### Installation and usage of brain-gcd game
+[![asciicast](https://asciinema.org/a/Y1hLr3jHHUGjyS44zSfARSDY5.svg)](https://asciinema.org/a/Y1hLr3jHHUGjyS44zSfARSDY5)
