@@ -10,3 +10,6 @@
 
 ### Installation and usage of brain-gcd game
 [![asciicast](https://asciinema.org/a/Y1hLr3jHHUGjyS44zSfARSDY5.svg)](https://asciinema.org/a/Y1hLr3jHHUGjyS44zSfARSDY5)
+
+### Installation and usage of brain-progression game
+[![asciicast](https://asciinema.org/a/pIrq9kdRHFxPJl8hU1bSDp8oo.svg)](https://asciinema.org/a/pIrq9kdRHFxPJl8hU1bSDp8oo)
