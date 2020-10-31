@@ -8,7 +8,7 @@ const formatUserAnswer = (answer) => (answer === 'yes' ? answer : 'no');
 
 export default {
   rulesMsg: 'Answer "yes" if the number is even, otherwise answer "no".',
-  getQuestion: () => getRandomNumber(),
+  getQuestion: getRandomNumber,
   isUserAnswerCorrect:
     (question, userAnswer) => getCorrectAnswer(question) === formatUserAnswer(userAnswer),
   getCorrectAnswer,
