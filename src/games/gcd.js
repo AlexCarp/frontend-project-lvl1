@@ -20,9 +20,14 @@ const getCorrectAnswer = (question) => {
   return getGCD(firstOperand, secondOperand);
 };
 
+const MAX_RANDOM_VALUE = 100;
+const MIN_RANDOM_VALUE = 1;
+
 export default {
   rulesMsg: 'Find the greatest common divisor of given numbers.',
-  getQuestion: () => `${getRandomNumber()} ${getRandomNumber()}`,
+  getQuestion: () => (
+    `${getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE)} ${getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE)}`
+  ),
   isUserAnswerCorrect:
     (question, userAnswer) => getCorrectAnswer(question) === Number(userAnswer),
   getCorrectAnswer,
