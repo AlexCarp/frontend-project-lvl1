@@ -13,3 +13,6 @@
 
 ### Installation and usage of brain-progression game
 [![asciicast](https://asciinema.org/a/pIrq9kdRHFxPJl8hU1bSDp8oo.svg)](https://asciinema.org/a/pIrq9kdRHFxPJl8hU1bSDp8oo)
+
+### Installation and usage of brain-prime game
+[![asciicast](https://asciinema.org/a/RkjcdcPsWuD8DyYpavdesz26n.svg)](https://asciinema.org/a/RkjcdcPsWuD8DyYpavdesz26n)
