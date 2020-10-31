@@ -29,5 +29,7 @@ export default async (game) => {
 
   if (winsCounter === 3) {
     console.log(`Congratulations, ${userName}!`);
+  } else {
+    console.log(`Let's try again, ${userName}!`);
   }
 };
