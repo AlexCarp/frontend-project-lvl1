@@ -1,7 +1,8 @@
 import promptly from 'promptly';
 
+const MAX_WINS_COUNT = 3;
+
 export default async (game) => {
-  const maxWinsCount = 3;
   let winsCounter = 0;
 
   console.log('Welcome to the Brain Games!');
@@ -11,7 +12,7 @@ export default async (game) => {
   console.log(`Hello, ${userName}!`);
   console.log(game.rulesMsg);
 
-  while (winsCounter < maxWinsCount) {
+  while (winsCounter < MAX_WINS_COUNT) {
     const question = game.getQuestion();
     console.log(`Question: ${question}`);
 
@@ -27,7 +28,7 @@ export default async (game) => {
     }
   }
 
-  if (winsCounter === 3) {
+  if (winsCounter === MAX_WINS_COUNT) {
     console.log(`Congratulations, ${userName}!`);
   } else {
     console.log(`Let's try again, ${userName}!`);
