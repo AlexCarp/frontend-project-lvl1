@@ -1,15 +1,19 @@
 import getRandomNumber from '../utils/get-random-number.js';
-import getVerboseBool from '../utils/get-verbose-bool.js';
-import formatUserBoolAnswer from '../utils/format-user-bool-answer.js';
 
 const isEven = (num) => num % 2 === 0;
 
-const getCorrectAnswer = (num) => getVerboseBool(isEven(num));
+const getRound = () => {
+  const num = getRandomNumber();
 
-export default {
-  rulesMsg: 'Answer "yes" if the number is even, otherwise answer "no".',
-  getQuestion: getRandomNumber,
-  isUserAnswerCorrect:
-    (question, userAnswer) => getCorrectAnswer(question) === formatUserBoolAnswer(userAnswer),
-  getCorrectAnswer,
+  return {
+    question: num,
+    answer: isEven(num) ? 'yes' : 'no',
+  };
 };
+
+const isEvenGame = {
+  rulesMsg: 'Answer "yes" if the number is even, otherwise answer "no".',
+  getRound,
+};
+
+export default isEvenGame;

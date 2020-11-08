@@ -13,17 +13,17 @@ export default async (game) => {
   console.log(game.rulesMsg);
 
   while (winsCounter < MAX_WINS_COUNT) {
-    const question = game.getQuestion();
-    console.log(`Question: ${question}`);
+    const round = game.getRound();
+    console.log(`Question: ${round.question}`);
 
     // eslint-disable-next-line no-await-in-loop
     const userAnswer = await promptly.prompt('Your answer: ');
 
-    if (game.isUserAnswerCorrect(question, userAnswer)) {
+    if (userAnswer === round.answer) {
       console.log('Correct!');
       winsCounter += 1;
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${game.getCorrectAnswer(question)}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
       break;
     }
   }

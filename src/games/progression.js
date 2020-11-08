@@ -12,29 +12,25 @@ const getNumbersSequence = () => {
     .map((member, i) => member + i * sequenceStep);
 };
 
-const getQuestionFromSequence = (sequence) => {
-  const rndIndex = getRandomNumber(sequence.length - 1);
+const getQuestionFromSequence = (sequence, missingIndex) => (
+  sequence
+    .map((member, i) => (i !== missingIndex ? member : PLACEHOLDER))
+    .join(' ')
+);
 
-  return sequence
-    .map((member, i) => (i !== rndIndex ? member : PLACEHOLDER))
-    .join(' ');
+const getRound = () => {
+  const sequence = getNumbersSequence();
+  const missingIndex = getRandomNumber(sequence.length - 1);
+
+  return {
+    question: getQuestionFromSequence(sequence, missingIndex),
+    answer: String(sequence[missingIndex]),
+  };
 };
 
-const getCorrectAnswer = (sequence) => {
-  const sequenceArr = sequence.split(' ');
-  const missingIndex = sequenceArr.findIndex((member) => member === PLACEHOLDER);
-  const sequenceStep = missingIndex > 1
-    ? Number(sequenceArr[1]) - Number(sequenceArr[0])
-    : Number(sequenceArr[missingIndex + 2]) - Number(sequenceArr[missingIndex + 1]);
-
-  return Number(sequenceArr[missingIndex - 1]) + sequenceStep
-    || Number(sequenceArr[missingIndex + 1]) - sequenceStep;
-};
-
-export default {
+const progressionGame = {
   rulesMsg: 'What number is missing in the progression?',
-  getQuestion: () => getQuestionFromSequence(getNumbersSequence()),
-  isUserAnswerCorrect:
-    (question, userAnswer) => getCorrectAnswer(question) === Number(userAnswer),
-  getCorrectAnswer,
+  getRound,
 };
+
+export default progressionGame;

@@ -1,30 +1,36 @@
 import getRandomNumber from '../utils/get-random-number.js';
 
-const MATH_OPERATIONS = ['+', '-', '*'];
+const MATH_OPERATORS = ['+', '-', '*'];
 
-const getRandomOperation = () => MATH_OPERATIONS[getRandomNumber(MATH_OPERATIONS.length)];
+const getRandomOperator = () => MATH_OPERATORS[getRandomNumber(MATH_OPERATORS.length - 1)];
 
-const getCorrectAnswer = (question) => {
-  const expressionArr = question.split(' ');
-  const firstOperand = Number(expressionArr[0]);
-  const secondOperand = Number(expressionArr[2]);
-
-  switch (expressionArr[1]) {
+const getCorrectAnswer = (num1, num2, operator) => {
+  switch (operator) {
     case '+':
-      return firstOperand + secondOperand;
+      return num1 + num2;
     case '-':
-      return firstOperand - secondOperand;
+      return num1 - num2;
     case '*':
-      return firstOperand * secondOperand;
+      return num1 * num2;
     default:
-      throw new Error(`Invalid math expression ${question}.`);
+      throw new Error('Invalid math expression.');
   }
 };
 
-export default {
-  rulesMsg: 'What is the result of the expression?',
-  getQuestion: () => `${getRandomNumber()} ${getRandomOperation()} ${getRandomNumber()}`,
-  isUserAnswerCorrect:
-    (question, userAnswer) => getCorrectAnswer(question) === Number(userAnswer),
-  getCorrectAnswer,
+const getRound = () => {
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
+  const operator = getRandomOperator();
+
+  return {
+    question: `${num1} ${operator} ${num2}`,
+    answer: String(getCorrectAnswer(num1, num2, operator)),
+  };
 };
+
+const calcGame = {
+  rulesMsg: 'What is the result of the expression?',
+  getRound,
+};
+
+export default calcGame;

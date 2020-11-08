@@ -1,5 +1,8 @@
 import getRandomNumber from '../utils/get-random-number.js';
 
+const MAX_RANDOM_VALUE = 100;
+const MIN_RANDOM_VALUE = 1;
+
 const getGCD = (num1, num2) => {
   const greaterNum = Math.max(num1, num2);
   const smallerNum = Math.min(num1, num2);
@@ -12,23 +15,19 @@ const getGCD = (num1, num2) => {
   return getGCD(smallerNum, remainder);
 };
 
-const getCorrectAnswer = (question) => {
-  const expressionArr = question.split(' ');
-  const firstOperand = Number(expressionArr[0]);
-  const secondOperand = Number(expressionArr[1]);
+const getRound = () => {
+  const num1 = getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE);
+  const num2 = getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE);
 
-  return getGCD(firstOperand, secondOperand);
+  return {
+    question: `${num1} ${num2}`,
+    answer: String(getGCD(num1, num2)),
+  };
 };
 
-const MAX_RANDOM_VALUE = 100;
-const MIN_RANDOM_VALUE = 1;
-
-export default {
+const gcdGame = {
   rulesMsg: 'Find the greatest common divisor of given numbers.',
-  getQuestion: () => (
-    `${getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE)} ${getRandomNumber(MAX_RANDOM_VALUE, MIN_RANDOM_VALUE)}`
-  ),
-  isUserAnswerCorrect:
-    (question, userAnswer) => getCorrectAnswer(question) === Number(userAnswer),
-  getCorrectAnswer,
+  getRound,
 };
+
+export default gcdGame;
