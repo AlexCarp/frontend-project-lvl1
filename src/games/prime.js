@@ -1,11 +1,17 @@
-import getRandomNumber from '../utils/get-random-number.js';
+import getRandomNumber from '../get-random-number.js';
 
 const isPrime = (num) => {
-  if (num <= 3) {
-    return num > 1;
+  if (num < 2) {
+    return false;
   }
 
-  for (let i = 2; i ** 2 <= num; i += 1) {
+  if (num === 2 || num === 3) {
+    return true;
+  }
+
+  const numGreatestDivider = Math.sqrt(num);
+
+  for (let i = 2; i <= numGreatestDivider; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -24,7 +30,7 @@ const getRound = () => {
 };
 
 const primeGame = {
-  rulesMsg: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  gameDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
   getRound,
 };
 

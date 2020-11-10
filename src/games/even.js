@@ -1,4 +1,4 @@
-import getRandomNumber from '../utils/get-random-number.js';
+import getRandomNumber from '../get-random-number.js';
 
 const isEven = (num) => num % 2 === 0;
 
@@ -11,9 +11,9 @@ const getRound = () => {
   };
 };
 
-const isEvenGame = {
-  rulesMsg: 'Answer "yes" if the number is even, otherwise answer "no".',
+const evenGame = {
+  gameDescription: 'Answer "yes" if the number is even, otherwise answer "no".',
   getRound,
 };
 
-export default isEvenGame;
+export default evenGame;

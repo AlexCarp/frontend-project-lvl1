@@ -1,4 +1,4 @@
-import getRandomNumber from '../utils/get-random-number.js';
+import getRandomNumber from '../get-random-number.js';
 
 const MAX_RANDOM_VALUE = 100;
 const MIN_RANDOM_VALUE = 1;
@@ -26,7 +26,7 @@ const getRound = () => {
 };
 
 const gcdGame = {
-  rulesMsg: 'Find the greatest common divisor of given numbers.',
+  gameDescription: 'Find the greatest common divisor of given numbers.',
   getRound,
 };
 

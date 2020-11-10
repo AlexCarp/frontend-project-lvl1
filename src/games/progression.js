@@ -1,16 +1,12 @@
-import getRandomNumber from '../utils/get-random-number.js';
+import getRandomNumber from '../get-random-number.js';
 
 const PLACEHOLDER = '..';
 
-const getNumbersSequence = () => {
-  const rndLength = getRandomNumber(10, 5);
-  const firstMember = getRandomNumber();
-  const sequenceStep = getRandomNumber(20, 1);
-
-  return new Array(rndLength)
+const getSequence = (firstMember, step, sequenceLength) => (
+  new Array(sequenceLength)
     .fill(firstMember)
-    .map((member, i) => member + i * sequenceStep);
-};
+    .map((member, i) => member + i * step)
+);
 
 const getQuestionFromSequence = (sequence, missingIndex) => (
   sequence
@@ -19,7 +15,10 @@ const getQuestionFromSequence = (sequence, missingIndex) => (
 );
 
 const getRound = () => {
-  const sequence = getNumbersSequence();
+  const firstMember = getRandomNumber();
+  const step = getRandomNumber(20, 1);
+  const sequenceLength = getRandomNumber(10, 5);
+  const sequence = getSequence(firstMember, step, sequenceLength);
   const missingIndex = getRandomNumber(sequence.length - 1);
 
   return {
@@ -29,7 +28,7 @@ const getRound = () => {
 };
 
 const progressionGame = {
-  rulesMsg: 'What number is missing in the progression?',
+  gameDescription: 'What number is missing in the progression?',
   getRound,
 };
 

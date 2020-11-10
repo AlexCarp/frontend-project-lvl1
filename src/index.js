@@ -10,7 +10,7 @@ export default async (game) => {
   const userName = await promptly.prompt('May I have your name?');
 
   console.log(`Hello, ${userName}!`);
-  console.log(game.rulesMsg);
+  console.log(game.gameDescription);
 
   while (winsCounter < MAX_WINS_COUNT) {
     const round = game.getRound();
