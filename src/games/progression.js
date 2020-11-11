@@ -32,4 +32,5 @@ const progressionGame = {
   getRound,
 };
 
+export { getSequence, getQuestionFromSequence };
 export default progressionGame;

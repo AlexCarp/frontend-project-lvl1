@@ -16,4 +16,5 @@ const evenGame = {
   getRound,
 };
 
+export { isEven };
 export default evenGame;

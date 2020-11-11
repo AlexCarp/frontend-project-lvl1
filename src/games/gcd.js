@@ -30,4 +30,5 @@ const gcdGame = {
   getRound,
 };
 
+export { getGCD };
 export default gcdGame;

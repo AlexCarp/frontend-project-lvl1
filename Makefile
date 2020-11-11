@@ -25,4 +25,7 @@ publish:
 lint:
 	@npx eslint .
 
-.PHONY: install brain-games brain-even brain-calc brain-gcd brain-progression brain-prime publish lint
+test:
+	@npx jest
+
+.PHONY: install brain-games brain-even brain-calc brain-gcd brain-progression brain-prime publish lint test

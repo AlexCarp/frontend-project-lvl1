@@ -34,4 +34,5 @@ const primeGame = {
   getRound,
 };
 
+export { isPrime };
 export default primeGame;

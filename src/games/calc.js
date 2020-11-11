@@ -33,4 +33,5 @@ const calcGame = {
   getRound,
 };
 
+export { calculate };
 export default calcGame;
