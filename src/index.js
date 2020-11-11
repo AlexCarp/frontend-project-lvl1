@@ -24,13 +24,10 @@ export default async (game) => {
       winsCounter += 1;
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
-      break;
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
 
-  if (winsCounter === MAX_WINS_COUNT) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
