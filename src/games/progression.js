@@ -2,23 +2,23 @@ import getRandomNumber from '../get-random-number.js';
 
 const PLACEHOLDER = '..';
 
-const getSequence = (firstMember, step, sequenceLength) => (
+const getSequence = (firstElement, step, sequenceLength) => (
   new Array(sequenceLength)
-    .fill(firstMember)
-    .map((member, i) => member + i * step)
+    .fill(firstElement)
+    .map((item, i) => item + i * step)
 );
 
 const getQuestionFromSequence = (sequence, missingIndex) => (
   sequence
-    .map((member, i) => (i !== missingIndex ? member : PLACEHOLDER))
+    .map((item, i) => (i !== missingIndex ? item : PLACEHOLDER))
     .join(' ')
 );
 
 const getRound = () => {
-  const firstMember = getRandomNumber();
+  const firstElement = getRandomNumber();
   const step = getRandomNumber(20, 1);
   const sequenceLength = getRandomNumber(10, 5);
-  const sequence = getSequence(firstMember, step, sequenceLength);
+  const sequence = getSequence(firstElement, step, sequenceLength);
   const missingIndex = getRandomNumber(sequence.length - 1);
 
   return {
