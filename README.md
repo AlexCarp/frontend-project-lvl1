@@ -1,7 +1,8 @@
 # Brain games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/bb61fc786e7a1be2f9f4/maintainability)](https://codeclimate.com/github/AlexCarp/frontend-project-lvl1/maintainability)
 [![CI](https://github.com/AlexCarp/frontend-project-lvl1/workflows/CI/badge.svg)](https://github.com/AlexCarp/frontend-project-lvl1/actions?query=workflow%3ACI)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bb61fc786e7a1be2f9f4/maintainability)](https://codeclimate.com/github/AlexCarp/frontend-project-lvl1/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/bb61fc786e7a1be2f9f4/test_coverage)](https://codeclimate.com/github/AlexCarp/frontend-project-lvl1/test_coverage)
 
 This package includes 5 simple math games:
 * brain-even
