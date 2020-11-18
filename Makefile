@@ -26,6 +26,6 @@ lint:
 	@npx eslint .
 
 test:
-	@npx jest
+	@npx jest --coverage
 
 .PHONY: install brain-games brain-even brain-calc brain-gcd brain-progression brain-prime publish lint test
